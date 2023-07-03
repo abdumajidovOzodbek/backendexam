@@ -1,5 +1,13 @@
 // import { Request } from "express";
 
-// class Request extends Admin{
-//     req.id =
+
+
+// export interface file{
+//    outerImage:any
+//    innerImage:any
+//    modelImage:any
+
+// }
+// export interface IRequest extends Request{
+//     files:file
 // }

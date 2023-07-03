@@ -4,20 +4,21 @@ import { Model } from "sequelize";
 
 
 class Product extends Model {
-    public ProductId: number
-    public ProductName: string
-    public OuterImage: string
-    public InnerImage: string
-    public ModelImage: string
+    public productId: number
+    public productName: string
+    public outerImage: string
+    public innerImage: string
+    public modelImage: string
     public made_it: string
     public distance: number
     public price: number
-    public CategoryId: number
+    public categoryId: number
     public description: string
     public color: string
-    public Motor: string
-    public Marka: string
-    public GearBook: string
+    public motor: string
+    public marka: string
+    public gearBook: string
+    public tonirovka: boolean
 }
 Product.init({
     ProductId: {
@@ -26,19 +27,19 @@ Product.init({
         allowNull: false,
         autoIncrement: true,
     },
-    ProductName: {
+    productName: {
         type: DataTypes.STRING(32),
         allowNull: false
     },
-    OuterImage: {
+    outerImage: {
         type: DataTypes.STRING(60),
         allowNull: false
     },
-    InnerImage: {
+    innerImage: {
         type: DataTypes.STRING(60),
         allowNull: false
     },
-    ModelImage: {
+    modelImage: {
         type: DataTypes. STRING(60),
         allowNull: false
     },
@@ -55,7 +56,7 @@ Product.init({
         allowNull: false
 
     },
-    CategoryId: {
+    categoryId: {
         type: DataTypes.INTEGER,
         allowNull: false
     },
@@ -67,18 +68,22 @@ Product.init({
         type: DataTypes.STRING(20),
         allowNull: false
     },
-    Motor: {
+    motor: {
         type: DataTypes.STRING(20),
         allowNull: false,
     },
-    Marka: {
+    marka: {
         type: DataTypes.STRING(20),
         allowNull: false
     },
-    GearBook: {
+    gearBook: {
         type: DataTypes.STRING(20),
         allowNull: false
+    },
+    tonirovka:{
+        type: DataTypes.BOOLEAN
     }
+
 },
     { sequelize, tableName: "Product",paranoid:true }
 

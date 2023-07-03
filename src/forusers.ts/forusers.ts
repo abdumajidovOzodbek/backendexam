@@ -13,8 +13,17 @@ const CATEGORY_GET_BYID=async (req:Request,res:Response)=>{
     }})
     res.send({status: 200, messagee:'succes', data})
 }
-
-
+const PRODUCT_GET_BYID=async (req:Request,res:Response)=>{
+    const id= req.params
+    const data =await Product.findAll({where:{
+        productId: id
+    }})
+    res.send({status: 200, messagee:'succes', data})
+}
+const PRODUCT_GET=async (req:Request,res:Response)=>{
+    const data = await Product.findAll()
+    res.send({status: 200, messagee:'succes', data})
+  }
 export {
-    CATEGORY_GET,CATEGORY_GET_BYID
+    CATEGORY_GET,CATEGORY_GET_BYID,PRODUCT_GET,PRODUCT_GET_BYID
 }
